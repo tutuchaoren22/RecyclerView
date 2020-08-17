@@ -7,13 +7,13 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_skip_to_list_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_default"
         android:textAllCaps="false"
-        android:textStyle="bold"
         android:paddingHorizontal="@dimen/btn_padding_horizon"
         android:background="@drawable/button_rounded_corners_dark_bg"
         app:layout_constraintLeft_toLeftOf="parent"
