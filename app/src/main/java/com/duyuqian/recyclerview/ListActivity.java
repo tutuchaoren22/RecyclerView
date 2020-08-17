@@ -42,7 +42,6 @@ public class ListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         DataAdapter adapter = new DataAdapter(dataList);
         recyclerView.setAdapter(adapter);
-
     }
 
     private void initDataList(int size) {

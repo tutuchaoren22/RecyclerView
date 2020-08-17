@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -26,9 +27,23 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.btn_skip_to_list_view)
-    public void onClick() {
-        Intent intent = new Intent(MainActivity.this, ImageListActivity.class);
+    @OnClick({R.id.btn_skip_to_list_view, R.id.btn_skip_to_multiple_list_view, R.id.btn_skip_to_img_list_view})
+    public void onClick(Button button) {
+        switch (button.getId()) {
+            case R.id.btn_skip_to_list_view:
+                startActivityByClass(ListActivity.class);
+                break;
+            case R.id.btn_skip_to_multiple_list_view:
+                startActivityByClass(MultipleListActivity.class);
+                break;
+            case  R.id.btn_skip_to_img_list_view:
+                startActivityByClass(ImageListActivity.class);
+                break;
+        }
+    }
+
+    public void startActivityByClass(Class target){
+        Intent intent = new Intent(this, target);
         startActivity(intent);
     }
 }
