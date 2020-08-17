@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btn_skip_to_list_view)
     public void onClick() {
-        Intent intent = new Intent(MainActivity.this, MultipleListActivity.class);
+        Intent intent = new Intent(MainActivity.this, ImageListActivity.class);
         startActivity(intent);
     }
 }

@@ -1,29 +1,36 @@
 package com.duyuqian.recyclerview;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 
-public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ImageDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Data> dataList;
+    private Context mContext;
 
     public static class ContentViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         TextView number;
         TextView description;
+        ImageView image;
 
         public ContentViewHolder(View view) {
             super(view);
             title = view.findViewById(R.id.title);
             number = view.findViewById(R.id.number);
             description = view.findViewById(R.id.description);
+            image = view.findViewById(R.id.image);
         }
     }
 
@@ -36,7 +43,8 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.View
         }
     }
 
-    public MultiTypeDataAdapter(List<Data> data) {
+    public ImageDataAdapter(Context context, List<Data> data) {
+        this.mContext=context;
         dataList = data;
     }
 
@@ -49,7 +57,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.View
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_header, parent, false);
                 return new HeaderViewHolder(view);
             case Data.TYPE_ITEM:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_item, parent, false);
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_item_and_img, parent, false);
                 return new ContentViewHolder(view);
         }
         return null;
@@ -79,6 +87,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.View
                     ((ContentViewHolder) holder).title.setText(data.getTitle());
                     ((ContentViewHolder) holder).number.setText(String.valueOf(data.getNumber()));
                     ((ContentViewHolder) holder).description.setText(data.getDescription());
+                    Glide.with(mContext).load(data.avatar).into(((ContentViewHolder) holder).image);
                     break;
             }
         }
@@ -88,4 +97,5 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.View
     public int getItemCount() {
         return dataList.size();
     }
+
 }
