@@ -6,19 +6,30 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindString;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ListActivity extends AppCompatActivity {
+    @BindView(R.id.recycler_view)
+    RecyclerView recyclerView;
+    @BindString(R.string.title)
+    String title;
+    @BindString(R.string.description)
+    String description;
+
     private List<Data> dataList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        ButterKnife.bind(this);
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
@@ -27,16 +38,16 @@ public class ListActivity extends AppCompatActivity {
             actionBar.hide();
         }
         initDataList(15);
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         DataAdapter adapter = new DataAdapter(dataList);
         recyclerView.setAdapter(adapter);
+
     }
 
     private void initDataList(int size) {
         for (int i = 1; i < size + 1; i++) {
-            dataList.add(new Data(getString(R.string.title, i), getString(R.string.description, i), i));
+            dataList.add(new Data(String.format(title, i), String.format(description, i), i));
         }
     }
 }
