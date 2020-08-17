@@ -43,7 +43,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Data data = dataList.get(position);
         holder.title.setText(data.getTitle());
-        holder.number.setText(data.getNumber());
+        holder.number.setText(String.valueOf(data.getNumber()));
         holder.description.setText(data.getDescription());
     }
 
