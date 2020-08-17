@@ -1,5 +1,6 @@
 package com.duyuqian.recyclerview;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,16 +60,30 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter {
     }
 
     @Override
+    public int getItemViewType(int position) {
+        switch (dataList.get(position).type) {
+            case 0:
+                return Data.TYPE_ITEM;
+            case 1:
+                return Data.TYPE_HEADER;
+            default:
+                return -1;
+        }
+    }
+
+    @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Data data = dataList.get(position);
-        if (data != null){
-            switch (data.type){
+        if (data != null) {
+            switch (data.type) {
                 case Data.TYPE_HEADER:
-                    ((HeaderViewHolder)holder).header.setText(header);
+                    ((HeaderViewHolder) holder).header.setText(header);
+                    break;
                 case Data.TYPE_ITEM:
-                    ((ContentViewHolder)holder).title.setText(data.getTitle());
-                    ((ContentViewHolder)holder).number.setText(String.valueOf(data.getNumber()));
-                    ((ContentViewHolder)holder).description.setText(data.getDescription());
+                    ((ContentViewHolder) holder).title.setText(data.getTitle());
+                    ((ContentViewHolder) holder).number.setText(String.valueOf(data.getNumber()));
+                    ((ContentViewHolder) holder).description.setText(data.getDescription());
+                    break;
             }
         }
     }

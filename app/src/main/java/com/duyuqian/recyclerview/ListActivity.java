@@ -52,7 +52,6 @@ public class ListActivity extends AppCompatActivity {
             } else {
                 dataList.add(new Data(Data.TYPE_ITEM, String.format(title, i), String.format(description, i), i));
             }
-
         }
     }
 }
