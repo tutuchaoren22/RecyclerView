@@ -5,7 +5,7 @@
     <dimen name="text_size_default">20sp</dimen>
     <dimen name="btn_padding_horizon">40dp</dimen>
     <dimen name="data_item_padding_horizon">50dp</dimen>
-    <dimen name="data_item_padding_vertical">10dp</dimen>
+    <dimen name="data_item_padding_vertical">20dp</dimen>
     <dimen name="data_item_margin_between">20dp</dimen>
     <dimen name="margin_image">25dp</dimen>
 
