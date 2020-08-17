@@ -5,5 +5,8 @@
     <string name="header">This is header</string>
     <string name="image">this is image</string>
     <string name="image_src">https://loremflickr.com/180/180?lock=%d</string>
+    <string name="listactiivty">ListActiivty</string>
+    <string name="multiplelistactiivty">MultipleListActiivty</string>
+    <string name="imagelistactiivty">ImageListActiivty</string>
 
 </resources>

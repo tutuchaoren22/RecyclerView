@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingHorizontal="@dimen/data_item_padding_horizon"
     tools:context=".MainActivity">
 
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_rounded_corners_dark_bg"
         android:paddingHorizontal="@dimen/btn_padding_horizon"
-        android:text="ListActiivty"
+        android:text="@string/listactiivty"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_default"
@@ -26,30 +26,30 @@
         android:id="@+id/btn_skip_to_multiple_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MultipleListActiivty"
+        android:background="@drawable/button_rounded_corners_dark_bg"
+        android:paddingHorizontal="@dimen/btn_padding_horizon"
+        android:text="@string/multiplelistactiivty"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_default"
-        android:textAllCaps="false"
-        android:paddingHorizontal="@dimen/btn_padding_horizon"
-        android:background="@drawable/button_rounded_corners_dark_bg"
+        app:layout_constraintBottom_toTopOf="@id/btn_skip_to_img_list_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/btn_skip_to_list_view"
-        app:layout_constraintBottom_toTopOf="@id/btn_skip_to_img_list_view"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_skip_to_list_view" />
 
     <Button
         android:id="@+id/btn_skip_to_img_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ImageListActiivty"
+        android:background="@drawable/button_rounded_corners_dark_bg"
+        android:paddingHorizontal="@dimen/btn_padding_horizon"
+        android:text="@string/imagelistactiivty"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_default"
-        android:textAllCaps="false"
-        android:paddingHorizontal="@dimen/btn_padding_horizon"
-        android:background="@drawable/button_rounded_corners_dark_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_skip_to_multiple_list_view"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_skip_to_multiple_list_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

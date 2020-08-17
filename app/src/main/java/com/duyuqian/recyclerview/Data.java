@@ -18,10 +18,6 @@ public class Data {
         this.avatar = avatar;
     }
 
-    public int getType() {
-        return type;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -34,7 +30,4 @@ public class Data {
         return number;
     }
 
-    public String getAvatar() {
-        return avatar;
-    }
 }
