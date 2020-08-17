@@ -1,6 +1,6 @@
 package com.duyuqian.recyclerview;
 
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import butterknife.BindString;
 
-public class MultiTypeDataAdapter extends RecyclerView.Adapter {
-    @BindString(R.string.header)
-    String header;
+public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Data> dataList;
 
     public static class ContentViewHolder extends RecyclerView.ViewHolder {
@@ -77,7 +74,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter {
         if (data != null) {
             switch (data.type) {
                 case Data.TYPE_HEADER:
-                    ((HeaderViewHolder) holder).header.setText(header);
+                    ((HeaderViewHolder) holder).header.setText(data.getTitle());
                     break;
                 case Data.TYPE_ITEM:
                     ((ContentViewHolder) holder).title.setText(data.getTitle());

@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -23,6 +22,8 @@ public class MultipleListActivity extends AppCompatActivity {
     String title;
     @BindString(R.string.description)
     String description;
+    @BindString(R.string.header)
+    String headerTitle;
     private List<Data> dataList = new ArrayList<>();
 
     @Override
@@ -37,19 +38,17 @@ public class MultipleListActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
-
         initDataList(15);
         MultiTypeDataAdapter adapter = new MultiTypeDataAdapter(dataList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         multiRecyclerView.setLayoutManager(layoutManager);
         multiRecyclerView.setAdapter(adapter);
-
     }
 
     private void initDataList(int size) {
-        for (int i = 1; i < size + 1; i++) {
-            if (i == 1) {
-                dataList.add(new Data(Data.TYPE_HEADER, String.format(title, i), String.format(description, i), i));
+        for (int i = 0; i < size + 1; i++) {
+            if (i == 0) {
+                dataList.add(new Data(Data.TYPE_HEADER, headerTitle, null, 0));
             } else {
                 dataList.add(new Data(Data.TYPE_ITEM, String.format(title, i), String.format(description, i), i));
             }
