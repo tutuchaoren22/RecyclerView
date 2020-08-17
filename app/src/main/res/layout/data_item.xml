@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/data_item_bg"
+    android:layout_margin="@dimen/data_item_margin_between"
     android:paddingHorizontal="@dimen/data_item_padding_horizon"
     android:paddingVertical="@dimen/data_item_padding_vertical">
 

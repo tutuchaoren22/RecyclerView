@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
-    private static final String TAG =  "LIST_ACTIVITY";
     private List<Data> dataList = new ArrayList<>();
 
     @Override
@@ -19,8 +18,6 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         initDataList(15);
-        Log.e(TAG, "------1------");
-        Log.e(TAG, String.valueOf(dataList.size()));
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -29,7 +26,7 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void initDataList(int size) {
-        for (int i = 0; i < size; i++) {
+        for (int i = 1; i < size + 1; i++) {
             dataList.add(new Data(getString(R.string.title, i), getString(R.string.description, i), i));
         }
     }
