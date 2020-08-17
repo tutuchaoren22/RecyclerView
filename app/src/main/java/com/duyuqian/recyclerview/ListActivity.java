@@ -47,7 +47,12 @@ public class ListActivity extends AppCompatActivity {
 
     private void initDataList(int size) {
         for (int i = 1; i < size + 1; i++) {
-            dataList.add(new Data(String.format(title, i), String.format(description, i), i));
+            if (i == 1) {
+                dataList.add(new Data(Data.TYPE_HEADER, String.format(title, i), String.format(description, i), i));
+            } else {
+                dataList.add(new Data(Data.TYPE_ITEM, String.format(title, i), String.format(description, i), i));
+            }
+
         }
     }
 }
