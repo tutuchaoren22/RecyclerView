@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RecyclerView</string>
-    <string name="title">title%d</string>
-    <string name="description">desp%d</string>
+    <string name="title">Title%d</string>
+    <string name="description">Desp%d</string>
     <string name="header">This is header</string>
     <string name="image">this is image</string>
     <string name="image_src">https://loremflickr.com/180/180?lock=%d</string>

@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:textSize="@dimen/item_text_size"
         app:layout_constraintBottom_toTopOf="@id/description"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/number"
@@ -23,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:textSize="@dimen/item_text_size"
         app:layout_constraintBaseline_toBaselineOf="@id/title"
         app:layout_constraintLeft_toRightOf="@id/title"
         app:layout_constraintRight_toRightOf="parent" />
@@ -33,6 +35,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/data_item_margin_between"
         android:textColor="@color/black"
+        android:textSize="@dimen/item_text_size"
         app:layout_constraintLeft_toLeftOf="@id/title"
         app:layout_constraintTop_toBottomOf="@id/title" />
 

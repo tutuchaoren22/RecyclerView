@@ -44,7 +44,7 @@ public class ImageDataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     public ImageDataAdapter(Context context, List<Data> data) {
-        this.mContext=context;
+        this.mContext = context;
         dataList = data;
     }
 

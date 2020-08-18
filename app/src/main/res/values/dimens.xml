@@ -2,11 +2,14 @@
 <resources>
     <dimen name="data_item_border_width">2dp</dimen>
     <dimen name="btn_radius">8dp</dimen>
+    <dimen name="data_radius">10dp</dimen>
     <dimen name="text_size_default">20sp</dimen>
+    <dimen name="item_text_size">16sp</dimen>
     <dimen name="btn_padding_horizon">40dp</dimen>
-    <dimen name="data_item_padding_horizon">50dp</dimen>
+    <dimen name="main_padding_horizon">50dp</dimen>
+    <dimen name="data_item_padding_horizon">30dp</dimen>
     <dimen name="data_item_padding_vertical">20dp</dimen>
     <dimen name="data_item_margin_between">20dp</dimen>
     <dimen name="margin_image">25dp</dimen>
-    <dimen name="image_size">100dp</dimen>
+    <dimen name="image_size">60dp</dimen>
 </resources>

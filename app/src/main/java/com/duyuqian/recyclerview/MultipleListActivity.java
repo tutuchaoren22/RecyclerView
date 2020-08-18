@@ -48,9 +48,9 @@ public class MultipleListActivity extends AppCompatActivity {
     private void initDataList(int size) {
         for (int i = 0; i < size + 1; i++) {
             if (i == 0) {
-                dataList.add(new Data(Data.TYPE_HEADER, headerTitle, null, 0,null));
+                dataList.add(new Data(Data.TYPE_HEADER, headerTitle, null, 0, null));
             } else {
-                dataList.add(new Data(Data.TYPE_ITEM, String.format(title, i), String.format(description, i), i,null));
+                dataList.add(new Data(Data.TYPE_ITEM, String.format(title, i), String.format(description, i), i, null));
             }
         }
     }

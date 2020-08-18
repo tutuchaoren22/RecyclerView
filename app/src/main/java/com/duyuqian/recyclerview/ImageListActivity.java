@@ -42,7 +42,7 @@ public class ImageListActivity extends AppCompatActivity {
             actionBar.hide();
         }
         initDataList(100);
-        ImageDataAdapter adapter = new ImageDataAdapter(this,dataList);
+        ImageDataAdapter adapter = new ImageDataAdapter(this, dataList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         multiRecyclerView.setLayoutManager(layoutManager);
         multiRecyclerView.setAdapter(adapter);
