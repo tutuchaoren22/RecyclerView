@@ -22,7 +22,6 @@ public class ListActivity extends AppCompatActivity {
     String title;
     @BindString(R.string.description)
     String description;
-
     private List<Data> dataList = new ArrayList<>();
 
     @Override
@@ -30,22 +29,16 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         ButterKnife.bind(this);
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
-        initDataList(15);
+        initDataList();
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         DataAdapter adapter = new DataAdapter(dataList);
         recyclerView.setAdapter(adapter);
     }
 
-    private void initDataList(int size) {
-        for (int i = 1; i < size + 1; i++) {
+    private void initDataList() {
+        int DATA_LIST_LENGTH = 15;
+        for (int i = 1; i <= DATA_LIST_LENGTH; i++) {
             dataList.add(new Data(0, String.format(title, i), String.format(description, i), i, null));
         }
     }

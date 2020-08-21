@@ -34,22 +34,16 @@ public class ImageListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_list);
         ButterKnife.bind(this);
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
-        initDataList(100);
+        initDataList();
         ImageDataAdapter adapter = new ImageDataAdapter(this, dataList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         multiRecyclerView.setLayoutManager(layoutManager);
         multiRecyclerView.setAdapter(adapter);
     }
 
-    private void initDataList(int size) {
-        for (int i = 0; i < size + 1; i++) {
+    private void initDataList() {
+        int DATA_LIST_LENGTH = 100;
+        for (int i = 0; i <= DATA_LIST_LENGTH; i++) {
             if (i == 0) {
                 dataList.add(new Data(Data.TYPE_HEADER, headerTitle, null, 0, null));
             } else {

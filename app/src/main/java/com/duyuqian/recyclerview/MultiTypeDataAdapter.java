@@ -40,6 +40,7 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.View
         dataList = data;
     }
 
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -51,20 +52,14 @@ public class MultiTypeDataAdapter extends RecyclerView.Adapter<RecyclerView.View
             case Data.TYPE_ITEM:
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_item, parent, false);
                 return new ContentViewHolder(view);
+            default:
+                return null;
         }
-        return null;
     }
 
     @Override
     public int getItemViewType(int position) {
-        switch (dataList.get(position).type) {
-            case 0:
-                return Data.TYPE_ITEM;
-            case 1:
-                return Data.TYPE_HEADER;
-            default:
-                return -1;
-        }
+        return dataList.get(position).type;
     }
 
     @Override

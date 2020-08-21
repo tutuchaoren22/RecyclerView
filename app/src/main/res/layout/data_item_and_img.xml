@@ -14,8 +14,8 @@
         android:layout_height="@dimen/image_size"
         android:contentDescription="@string/image"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/title"
+        app:layout_constraintEnd_toStartOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,8 +26,8 @@
         android:textColor="@color/black"
         android:textSize="@dimen/item_text_size"
         app:layout_constraintBottom_toTopOf="@id/description"
-        app:layout_constraintLeft_toRightOf="@id/image"
-        app:layout_constraintRight_toLeftOf="@id/number"
+        app:layout_constraintEnd_toStartOf="@id/number"
+        app:layout_constraintStart_toEndOf="@id/image"
         app:layout_constraintTop_toTopOf="@id/image" />
 
     <TextView
